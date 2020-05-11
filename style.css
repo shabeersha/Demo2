@@ -2540,6 +2540,8 @@ ul.author-social-profile li:hover .fa {
     border: 1px solid #ebebeb;
     background: #f7f7f7;
     color: #383749;
+    border-radius: 0;
+    height: calc(2.5em + .75rem + 2px);
 }
 
 .contact-form select{
@@ -2549,6 +2551,8 @@ ul.author-social-profile li:hover .fa {
     border: 1px solid #ebebeb;
     background: #f7f7f7;
     color: #383749;
+    border-radius: 0;
+    height: calc(2.4em + .75rem + 2px);
 }
 
 

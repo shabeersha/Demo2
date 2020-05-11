@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+<!--    <link rel="stylesheet" href="css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- FontAwesome CSS -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -23,6 +24,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body class="contact-page">
 <div class="page-header">
@@ -35,7 +37,7 @@
                     <div class="col-9 col-lg-3">
                         <div class="site-branding ">
 
-                            <h1 class="site-title"><a href="index.html" rel="home"  style="font-size:.9em;background: #000000 ;padding-top: 6px;padding-bottom: 5px;padding-left: 5px;padding-right:6px;"><span style="color: white;background: black;">CROSS<span style="color: black;background: red;"><b>ROADS</b></span></span></a></h1>
+                            <h1 class="site-title"><a href="index.html" rel="home"><img src="images/main-logo-crossroads.jpg" style="width: 100%;height: auto;">
                         </div><!-- .site-branding -->
                     </div><!-- .col -->
 
@@ -71,7 +73,8 @@
         </div><!-- .col -->
     </div><!-- .row -->
 
-    <form id="form" action="https://script.google.com/macros/s/AKfycbwzgNnU8t6GCftsfDbKv3VYCFQnNeL-7uh7DK-wmkCIPS_z14jE/exec" method="POST">
+    <form id="form" class="needs-validation" action="https://script.google.com/macros/s/AKfycbwzgNnU8t6GCftsfDbKv3VYCFQnNeL-7uh7DK-wmkCIPS_z14jE/exec" method="POST" novalidate>
+
         <div class="row justify-content-between">
 
             <div class="container" style="margin-top: -87px;padding-bottom: 20px;">
@@ -81,44 +84,89 @@
 
                         <div class="col-12">
                             <div class="row">
-                                <div class="col-md-6"><input type="text" placeholder="Your Full Name" name="name" id="name"></div>
-                                <div class="col-md-6"> <input type="text"  placeholder="Telegram Id" name="tgid" id="tgid"></div>
-                                <div class="col-md-6"> <input type="number"  placeholder="Contact Number" name="contact_no" id="contact_no"></div>
-                                <div class="col-md-6"> <input type="number" placeholder="Alternate Number (if any)" name="alt_contact_no" id="alt_contact_no" ></div>
-                                <div class="col-md-6 ">
-                                    <select name="gender"  id="gender">
-                                        <option disabled="disabled" selected="selected" >Gender</option>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Full Name" name="name" id="name" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your fullname.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <input type="text" class="form-control" placeholder="Telegram Id" name="tgid" id="tgid" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your telegaram id.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="number" class="form-control" placeholder="Contact Number" name="contact_no" id="contact_no" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your Phonenumber.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="number" class="form-control" placeholder="Alternate Number (if any)" name="alt_contact_no" id="alt_contact_no" >
+                                </div>
+                                <div class="col-md-6">
+                                    <select name="gender" class="form-control" id="gender" required>
+                                        <option disabled selected hidden value="">Gender</option>
                                         <option value="Male" >Male</option>
                                         <option value="Female" >Female</option>
                                     </select>
-                                    <div class="select-dropdown"></div>
+                                    <div class="select-dropdown" required></div>
+                                    <div class="invalid-feedback">
+                                        Please Select The Gender.
+                                    </div>
                                 </div>
                                 <div class="col-md-6 ">
-                                    <select name="status" onchange="(this.selectedIndex==3)?document.getElementById('status_2').style.display='block':document.getElementById('status_2').style.display='none';" id="status">
+                                    <select name="status" class="form-control" onchange="(this.selectedIndex==3)?document.getElementById('status_2').style.display='block':document.getElementById('status_2').style.display='none';" id="status" required>
 
-                                        <option disabled="disabled" selected="selected" >Student/Employee</option>
-                                        <option value="Student" >Student</option>
+                                        <option disabled selected hidden value="" >Student/Employee</option>
+                                        <option value="Student" value="" >Student</option>
                                         <option value="Employee" >Employee</option>
-                                        <option >Other</option>
+                                        <option value="Other">Other</option>
 
 
 
                                     </select>
                                     <div class="select-dropdown"></div>
+                                    <div class="invalid-feedback">
+                                        Please select your current status.
+                                    </div>
                                 </div>
 
                             </div>
-                            <input type="text"  style="display: none;" class="col-md-12" placeholder="Your Current Status" name="status_2" id="status_2">
-                            <input type="email"  class="col-md-12" placeholder="Your Email" name="email" id="email">
-                            <textarea class="col-md-12" placeholder="Address" rows="4" name="address" id="address"></textarea>
+                            <div>
+                                <input type="text" class="form-control" style="display: none;" class="col-md-12" placeholder="Your Current Status" name="status_2" id="status_2">
+                            </div>
+
+                            <div>
+                                <input type="email"  class="col-md-12 form-control" placeholder="Your Email" name="email" id="email" required>
+                                <div class="invalid-feedback">
+                                    Please enter your email id.
+                                </div>
+                            </div>
+                            <div>
+                                <textarea class="col-md-12 form-control" placeholder="Address" rows="4" name="address" id="address" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter your address.
+                                </div>
+                            </div>
                             <div id="data"></div>
                             <div>
                                 <label for="uploadfile" >Personal ID Proof (AADHAR / Voter ID / Driving Licence / Passport)</label>
-                            <input id="uploadfile"  name="uploadfile" type="file" class="col-md-12 file" data-browse-on-zone-click="true" style="margin-top: 0px;" >
+                            <input id="uploadfile"  name="uploadfile" type="file" class="col-md-12 file form-control" data-browse-on-zone-click="true" style="margin-top: 0px;" required>
+                                <div class="invalid-feedback">
+                                    Please select your personal id(image file is recommended).
+                                </div>
                             </div>
 
 
-                            <textarea class="col-md-12" placeholder="Tell Us About You" rows="4" id="tellus" name="tellus"></textarea>
+                            <div>
+                                <textarea class="col-md-12 form-control mb-3" placeholder="Tell Us About You" rows="8" id="tellus" name="tellus" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please tell us about yourself.
+                                </div>
+                            </div>
 
 
 
@@ -161,84 +209,12 @@
 </footer><!-- .site-footer -->
 
 <script type='text/javascript' src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-
-
 <script type='text/javascript' src='js/swiper.min.js'></script>
 <script type='text/javascript' src='js/masonry.pkgd.min.js'></script>
 <script type='text/javascript' src='js/jquery.collapsible.min.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script type='text/javascript' src='js/custom.js'></script>
-
-
-
-
-<script type="text/javascript">
-
-
-
-
-
-    $(document).ready(function () {
-
-
-        $('form[id="form"]').validate({ // initialize the plugin
-            rules: {
-                'name': {
-                    required: true,
-                    minlength: 3
-                },
-                'tgid': {
-                    required: true
-
-                },
-                'contact_no':{
-                    required:true
-                },
-                'alt_contact_no':{
-                    required:true
-                },
-                'gender':{
-                    required:true
-                },
-                'status':{
-                    required:true
-                },
-                'email':{
-                    required:true,
-                    email: true
-                },
-                'address':{
-                    required:true
-                },
-                'tellus':{
-                    required:true
-                },
-                'uploadfile':{
-                    required:true
-                }
-
-            },
-            submitHandler: function (form) {
-
-                    $('#btn-one').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Uploading...').addClass('disabled');
-
-
-                $('#form').submit();
-
-
-
-                return false;
-            }
-        });
-
-    });
-
-
-
-</script>
 <script>
 
     $('#uploadfile').on("change", function() {
